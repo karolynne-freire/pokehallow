@@ -23,13 +23,31 @@
   </header>
 
   <main class="content">
-    <section>
-      <h2>Prepare-se para capturar Pokémons sombrios!</h2>
-      <p>
-        Em uma noite de Halloween, os Pokémons se escondem nas sombras. 
-        Você está pronto para a caçada mais assustadora do ano?
-      </p>
-    </section>
+    <div class="controls">
+      <input type="text" id="input-pesquisar" placeholder="Nome ou ID do Pokémon" />
+      <button class="btn-menu" id="btn-pesquisar">Buscar</button>
+      <button  class="btn-menu"id="btn-favoritos">⭐ Favoritos</button>
+    </div>
+  
+    <p id="mensagem"></p>
+  
+    <section id="pokemon-lista"></section>
+  
+    <div class="navegacao">
+      <button class="btn-menu" id="btn-anterior" disabled>⬅️ Anterior</button>
+      <button class="btn-menu" id="btn-proximo">Próximo ➡️</button>
+    </div>
+  
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="fog"></div>
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img id="modal-img" src="" alt="" />
+        <h2 id="modal-nome"></h2>
+        <p id="modal-info"></p>
+      </div>
+    </div>
   </main>
 
   <footer>

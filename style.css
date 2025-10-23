@@ -1,3 +1,11 @@
+:root {
+    --cor-principal: #ff6600;
+    --cor-secundaria: #ff4500;
+    --cor-fundo: #000000;
+    --cor-texto: #ffffff;
+  }
+  
+
 .splash {
     position: fixed;
     top: 0;
@@ -21,7 +29,7 @@
   .splash h1 {
     position: absolute;
     top: 5%;
-    color: #ff6600;;
+    color: var(--cor-principal);
     font-family: 'Creepster', cursive;
     font-size: 80px;
     letter-spacing: 2px;
@@ -44,7 +52,7 @@
     padding: 0;
     font-family: 'Creepster', cursive;
     background: #0a0a0a;
-    color: #ff6600;
+    color: var(--cor-principal);
     text-align: center;
   }
 
@@ -56,7 +64,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #ff6600;
+    color:var(--cor-principal);
     text-shadow: 2px 2px 8px black;
   }
 
@@ -68,6 +76,163 @@
   main {
     text-align: center;
     padding: 50px 20px;
+  }
+  .controls {
+    margin: 20px;
+  }
+
+  input {
+    width: 500px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid var(--cor-principal);
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+
+  .btn-menu {
+    cursor: pointer;
+    background-color: var(--cor-principal);
+    border: none;
+    width: 120px;  
+    height: 40px; 
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-left: 15px;
+    transition: background-color 0.3s ease;
+  }
+
+
+  button:hover:not(:disabled) {
+    background-color: var(--cor-principal);
+    color: white;
+  }
+
+  button:disabled {
+    background-color: #555;
+    color: #999;
+    cursor: not-allowed;
+  }
+
+  #pokemon-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .pokemon-card {
+    background-color: #1a1a1a;
+    border: 2px solid var(--cor-principal);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px var(--cor-principal);
+    transition: transform 0.2s, box-shadow 0.3s;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .pokemon-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ffa040;
+  }
+
+  .pokemon-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px var(--cor-principal));
+  }
+
+  .favorite-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: var(--cor-principal);
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  .favorite-btn.favorited {
+    color:  #c0c0c0;
+    text-shadow: 0 0 10px;
+    font-size: 30px;
+    top: 3px;
+  }
+
+  #mensagem {
+    color: var(--cor-principal);
+    margin-top: 15px;
+    min-height: 25px;
+  }
+
+  .navegacao {
+    margin: 20px;
+  }
+
+  /* MODAL */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .fog {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url('https://i.imgur.com/8eQ1W78.png');
+    background-size: cover;
+    opacity: 0.1;
+    animation: moveFog 20s linear infinite;
+  }
+
+  @keyframes moveFog {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .modal-content {
+    background-color: #1a1a1a;
+    border: 2px solid var(--cor-principal);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    max-width: 400px;
+    color: #ffcc66;
+    position: relative;
+    box-shadow: 0 0 30px var(--cor-principal);
+    z-index: 10;
+  }
+
+  .modal-content img {
+    width: 150px;
+    height: 150px;
+    filter: drop-shadow(0 0 10px var(--cor-principal));
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    color: var(--cor-principal);
+    cursor: pointer;
+    z-index: 20;
   }
 
   section {
@@ -94,4 +259,21 @@
 
   .content.visible {
     opacity: 1;
+  }
+
+  @media (max-width: 600px) {
+    input {
+      width: 95%;
+    }
+
+      .btn-menu {
+      width: 30%; /* também ocupa toda a largura */
+      margin-left: 5; /* remove o espaço lateral */
+      margin-top: 15px; /* adiciona espaçamento entre input e botão */
+    }
+    
+    .splash img {
+      margin-top: 100px;
+      width: 500px;
+    }
   }
