@@ -5,7 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="https://i.pinimg.com/736x/2f/f8/92/2ff892cec4421a1f0d44d9ca01ce198f.jpg" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="style.css">
   <title>Pokehallow</title>
 
@@ -21,13 +22,17 @@
     <h1>Pokehallow</h1>
     <p>Explore os Pokémon mais sombrios e misteriosos...</p>
   </header>
-
-  <main class="content">
+<main>
     <div class="controls">
       <input type="text" id="input-pesquisar" placeholder="Nome ou ID do Pokémon" />
-      <button class="btn-menu" id="btn-pesquisar">Buscar</button>
-      <button  class="btn-menu"id="btn-favoritos">⭐ Favoritos</button>
-    </div>
+      
+      <div class="menu-botoes">
+          <button class="btn-menu" id="btn-pesquisar">Buscar</button>
+          <button  class="btn-menu"id="btn-favoritos"> Favoritos</button>
+          <button class="btn-menu" id="btn-principal"> Pokémons </button>
+
+          </div>
+  </div>
   
     <p id="mensagem"></p>
   
@@ -48,6 +53,8 @@
         <p id="modal-info"></p>
       </div>
     </div>
+
+    
   </main>
 
   <footer>
