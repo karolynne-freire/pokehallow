@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     splash.classList.add("hidden");
     content.classList.add("visible");
-  }, 3000); // 3 segundos
+  }, 3000); 
 });
 
 // ELEMENTOS DOM
@@ -126,7 +126,8 @@ function renderizarLista(lista) {
 
     card.innerHTML = `
       <button class="favorite-btn ${favoritado}" data-id="${pokemon.id}">★</button>
-      <img src="${urlImagem}" alt="${pokemon.name}" loading="lazy" />
+      <img src="${urlImagem}" alt="${pokemon.name}" loading="lazy"
+     onerror="this.onerror=null; this.src='${PLACEHOLDER_IMG}'" />
       <h3>${pokemon.name}</h3>
       <p>#${pokemon.id}</p>
       <p>Tipo: ${pokemon.types.map((t) => t.type.name).join(", ")}</p>
@@ -161,6 +162,7 @@ async function mostrarPagina(pagina) {
 
     mostrarMensagem(`Carregando Pokémon da página ${pagina + 1}...`);
     listaParaRenderizar = await Promise.all(referenciasPagina.map((ref) => obterPokemon(ref.name)));
+    mostrarMensagem("");
 
   } else if (modoAtual === "favoritos") {
     listaBase = listaFavoritos;
