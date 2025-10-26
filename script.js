@@ -37,7 +37,7 @@ let modoAtual = "fantasma";
 
 
 // Fallback de imagem
-const PLACEHOLDER_IMG = '/img/pokemon.png'; 
+const PLACEHOLDER_IMG = '/img/erro-imagem.png'; 
 
 // FUNÇÕES UTILITÁRIAS 
 function mostrarMensagem(texto) {
@@ -52,7 +52,6 @@ function tratarErroAPI(erro) {
   btnPesquisar.disabled = true;
 }
 
-// Centraliza toda a lógica de URL de imagem
 function obterImagemPokemon(pokemon) {
   let url = null;
 
@@ -212,7 +211,7 @@ async function carregarPokemons(tipo) {
   }
 }
 
-// ==================== BUSCA ====================
+// BUSCA 
 async function buscarPokemon(idOuNome) {
   const query = idOuNome.toString().trim().toLowerCase();
   if (!query) {
@@ -243,7 +242,7 @@ async function buscarPokemon(idOuNome) {
   }
 }
 
-// ==================== FAVORITOS ====================
+// FAVORITOS
 function toggleFavorito(id) {
   if (favoritos.includes(id)) favoritos = favoritos.filter((f) => f !== id);
   else favoritos.push(id);
@@ -255,7 +254,7 @@ function toggleFavorito(id) {
   else mostrarPagina(paginaAtual);
 }
 
-// ==================== DETALHES ====================
+//DETALHES
 async function mostrarDetalhes(id) {
   try {
     const pokemon = await obterPokemon(id);
