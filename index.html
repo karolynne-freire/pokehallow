@@ -1,14 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://i.pinimg.com/736x/2f/f8/92/2ff892cec4421a1f0d44d9ca01ce198f.jpg" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
+  <title>Pokehallow</title>
+
 </head>
 <body>
+
+  <div class="splash">
+    <h1>Bem-vindo ao Pokehallow</h1>
+    <img src="/img/pokemon.png" alt="Pumpkaboo assustador">
+  </div>
+  
+  <header class="capa">
+    <h1>Pokehallow</h1>
+    <p>Explore os Pokémon mais sombrios e misteriosos...</p>
+  </header>
+<main>
+    <div class="controls">
+      <input type="text" id="input-pesquisar" placeholder="Nome ou ID do Pokémon" />
+      
+      <div class="menu-botoes">
+          <button class="btn-menu" id="btn-pesquisar">Buscar</button>
+          <button  class="btn-menu"id="btn-favoritos"> Favoritos</button>
+          <button class="btn-menu" id="btn-principal"> Pokémons </button>
+
+          </div>
+  </div>
+  
+    <p id="mensagem"></p>
+  
+    <section id="pokemon-lista"></section>
+  
+    <div class="navegacao">
+      <button class="btn-menu" id="btn-anterior" disabled>⬅️ Anterior</button>
+      <button class="btn-menu" id="btn-proximo">Próximo ➡️</button>
+    </div>
+  
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="fog"></div>
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img id="modal-img" src="" alt="" />
+        <h2 id="modal-nome"></h2>
+        <p id="modal-info"></p>
+      </div>
+    </div>
+
     
+  </main>
+
+  <footer>
+    <p>© 2025 Pokehallow. Inspirado em Pokémon e Halloween 🎃</p>
+  </footer>
+
 </body>
 <script src="script.js"></script>
 </html>
+
