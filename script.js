@@ -266,7 +266,9 @@ async function mostrarDetalhes(id) {
     modalImg.src = urlImagemModal;
     modalNome.textContent = `${pokemon.name} (#${pokemon.id})`;
     modalInfo.textContent = `Tipo: ${pokemon.types.map((t) => t.type.name).join(", ")} | Altura: ${(pokemon.height/10).toFixed(1)}m | Peso: ${(pokemon.weight/10).toFixed(1)}kg`;
+
     modal.style.display = "flex";
+    fog.style.display = "none"; 
   } catch (erro) {
     mostrarMensagem("Erro ao carregar detalhes.");
   }
