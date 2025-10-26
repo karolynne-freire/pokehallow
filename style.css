@@ -224,11 +224,14 @@ button:disabled {
   position: absolute;
   width: 200%;
   height: 200%;
-  background: url('https://i.imgur.com/8eQ1W78.png');
+  /* background: url('https://i.imgur.com/8eQ1W78.png'); */
   background-size: cover;
   opacity: 0.1;
   animation: moveFog 20s linear infinite;
 }
+
+
+
 
 @keyframes moveFog {
   from { transform: translateX(0); }

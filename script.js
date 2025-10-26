@@ -23,6 +23,8 @@ const modalImg = document.getElementById("modal-img");
 const modalNome = document.getElementById("modal-nome");
 const modalInfo = document.getElementById("modal-info");
 const btnPrincipal = document.getElementById("btn-principal");
+const fog = document.getElementById("fog");
+
 
 // VARIÁVEIS 
 let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
@@ -268,7 +270,7 @@ async function mostrarDetalhes(id) {
     modalInfo.textContent = `Tipo: ${pokemon.types.map((t) => t.type.name).join(", ")} | Altura: ${(pokemon.height/10).toFixed(1)}m | Peso: ${(pokemon.weight/10).toFixed(1)}kg`;
 
     modal.style.display = "flex";
-    fog.style.display = "none"; 
+    fog.style.display = "block";
   } catch (erro) {
     mostrarMensagem("Erro ao carregar detalhes.");
   }
